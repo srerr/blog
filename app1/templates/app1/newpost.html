@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}myblogs|post{% endblock title %}
+{% load static %}
+{% block content %}
+<div class="cr">
+    <div class="layout">
+      <!-- left layout -->
+      <div class="left">
+        <div class="page-top">
+          <div class="top flex">
+            <div class="page-name">
+              <a href="#" class="learn">
+                <span class="material-icons"> keyboard_return </span> Go
+                back
+              </a>
+              <h1>POST</h1>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+<center>
+
+        <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="s-active input">
+                {{newpost.title}}
+            </div><br>
+            <div class="comment">
+                <div class="comment-sec-main">
+                    <div class="comment-sec">
+                      <div class="comment">
+                <p>{{newpost.content}}</p>
+            </div>
+        </div>
+    </div>
+</div><br>
+                <p>{{newpost.image}}</p><br>
+              <p><button type="submit" class="btn btn-primary rounded">POST</button></p>
+        </form>
+</center>
+</div>
+{% endblock content %}
