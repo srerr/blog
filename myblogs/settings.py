@@ -85,11 +85,11 @@ DATABASES = {
 '''DATABASES= {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('NAME','myposts'),
-        'USER': os.getenv('USER','ram'),
-        'PASSWORD': os.getenv('PASSWORD','triveni@521'),
-        'HOST': os.getenv('HOST','myposts-db.mysql.database.azure.com'),
-        'PORT': os.getenv('PORT',3306),    
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST'),
+        'PORT': os.getenv('PORT'),    
     }}'''
 
 
@@ -135,15 +135,3 @@ MEDIA_ROOT=BASE_DIR / 'media/' #where to store media files
 LOGIN_REDIRECT_URL='/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-'''
-DEFAULT_FILE_STORAGE = 'storages.backends.azure_storage.AzureStorage'
-DEFAULT_FILE_STORAGE = 'ss.custom_azure.AzureMediaStorage'
-STATICFILES_STORAGE = 'ss.custom_azure.AzureStaticStorage'
-STATIC_LOCATION = "static"
-MEDIA_LOCATION = "images"
-AZURE_ACCOUNT_NAME=os.getenv('AZURE_ACCOUNT_NAME','myposts')
-AZURE_ACCOUNT_KEY=os.getenv('AZURE_ACCOUNT_KEY','1wYTBkKwlU8S1apnS74x50V5+a8SHi/cqU0i5ZaxJZcWByS3A8HlHmOtzQ127Qppp8rVQ5PEHfni+AStjZgb1g==')
-AZURE_CONTAINER=os.getenv('AZURE_CONTAINER','ramblob')
-AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'  '''
